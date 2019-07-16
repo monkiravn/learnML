@@ -1,5 +1,7 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split 
+from sklearn.metrics import accuracy_score
 #Load data
 dataframe = pd.read_csv('/home/asus/learnML/Project/Linear Regressison/data/Advertising.csv')
 radio_X = dataframe.values[:,2]
@@ -43,18 +45,21 @@ def train(radio_X, sales_y, weight, bias, learning_rate, iters):
         lost_his.append(lost)
     return weight,bias, lost_his
 
-weight, bias, lost = train(radio_X, sales_y, 0.03, 0.014, 0.001, 60)
+weight, bias, lost = train(radio_X, sales_y, 0.03, 0.014, 0.001, 6000)
 
 print(weight)
 print(bias)
-print(lost)
-iters = [i for i in range(60)]
+#print(lost)
+iters = [i for i in range(6000)]
 
-#plt.plot(iters, lost)
-#plt.show()
+plt.plot(iters, lost)
+plt.show()
+
+
 
 plt.scatter(radio_X, sales_y,marker='o')
 plt.plot(radio_X,radio_X*weight + bias)
 plt.show()
+
 
 
