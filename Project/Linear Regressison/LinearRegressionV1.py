@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split 
 from sklearn.metrics import r2_score
+from sklearn import linear_model
 #Load data
 dataframe = pd.read_csv('/home/asus/learnML/Project/Linear Regressison/data/Advertising.csv')
 radio_X = dataframe.values[:,2]
@@ -80,6 +81,7 @@ sst = np.sum((sales_test - np.mean(sales_test))**2)
 r2score = 1 - (ssr/sst)
 
 print('Accuracy of model: %.2f %%' %(100*r2score))
+
 
 
 
