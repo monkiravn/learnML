@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 from sklearn import linear_model
 #Load data
-dataframe = pd.read_csv('/home/asus/learnML/Project/Linear Regressison/data/Advertising.csv')
+dataframe = pd.read_csv('/home/asus/learning/learnML/Project/Linear Regressison/data/Advertising.csv')
 radio_X = dataframe.values[:,2]
 sales_y = dataframe.values[:,4]
 
@@ -66,7 +66,6 @@ plt.show()
 plt.scatter(radio_train, sales_train,marker='o')
 plt.plot(radio_train,radio_train*weight + bias)
 plt.show()
-
 #Accuracy of linear regreession using RMSE score
 
 sales_pred = predic_sale(radio_test,weight,bias)
