@@ -2,12 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 alpha = 0.1
+#define function ELU y = alpha*(e^x - 1) if x < 0 else x >= 0 y = x
 def ELU(data):
     result = []
     N = len(data)
     for i in range(N):
         if (data[i] < 0):
-            temp = alpha*(np.e**data[i] - 1) 
+            temp = alpha*(np.exp(data[i]) - 1) 
             result.append(temp)
         else:
             temp = data[i]

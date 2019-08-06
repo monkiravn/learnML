@@ -2,13 +2,16 @@ import numpy as np
 import random
 from collections import Counter
 
+
 data = [1,2,3,4,5,6,7,8,9]
 sum = np.sum(data)
+#Xac suat xuat hien cac chu so
 new_data = [1/sum , 2 /sum,3/sum,4/sum,5/sum,6/sum,7/sum,8/sum,9/sum]
+#chia thanh cac moc mien gia tri
 new_data[-1] = 1 - new_data[-1]
 for i in range(len(new_data) - 1):
     new_data[-i-2] = new_data[-i-1] - new_data[-i-2]
-
+#ham xac dinh so dua vao mien gia tri
 def point(number):
 #    if ( number > 0 and number < 1/sum):
 #        return 0
@@ -30,7 +33,7 @@ def point(number):
         return 8
     else: 
         return 9
-
+#Ham lap 
 def rand(iters):
     result = []
     temp = 0
@@ -41,7 +44,8 @@ def rand(iters):
     return result
 
 pointP = rand(1000)
-point_C = Counter(pointP)
+#Dem tan suat xuat hien
+point_C = Counter(pointP) 
 point_fren = point_C.most_common()
 point_fren.sort()
 fren = 0
