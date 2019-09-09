@@ -49,7 +49,7 @@ for count in irisSpecies:
         print('\tIris-versicolor:',count[1])
     else:
         print('\tIris-virginica:',count[1])
-
+file.close()
 
 
 
